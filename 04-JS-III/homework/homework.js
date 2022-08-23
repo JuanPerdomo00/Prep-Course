@@ -125,7 +125,7 @@ function multiplicarArgumentos() {
   if (arguments.length === 0) {
     return 0;
   }
-  for (let i = 0; i < arguments.length; i++) {
+  for (let i = 1; i < arguments.length; i++) {
     producto *= arguments[i];
   }
   return producto;
@@ -170,7 +170,7 @@ function todosIguales(arreglo) {
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí
   let iguales = [];
-  for (let i = 0; i <= arreglo.length - 1; i++) {
+  for (let i = 0; i < arreglo.length; i++) {
     if (arreglo[0] === arreglo[i + 1]) {
       iguales.push(arreglo[i]);
     }
@@ -201,6 +201,7 @@ function mesesDelAño(array) {
   }
 
   return "No se encontraron los meses pedidos";
+  // return mesesFiltrados ? mesesFiltrados.length === 3 : false;
 }
 
 function mayorACien(array) {
@@ -224,6 +225,19 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let arr = [];
+  let i = 1;
+  for (i; i <= 10; i++) {
+    arr.push((numero += 2));
+
+    if (numero === i) {
+      break;
+    }
+  }
+  if (numero === i) {
+    return "Se interrumpió la ejecución";
+  }
+  return arr;
 }
 
 function continueStatement(numero) {
@@ -233,6 +247,14 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let arr = [];
+  for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+      continue;
+    }
+    arr.push((numero += 2));
+  }
+  return arr;
 }
 
 // No modificar nada debajo de esta línea
